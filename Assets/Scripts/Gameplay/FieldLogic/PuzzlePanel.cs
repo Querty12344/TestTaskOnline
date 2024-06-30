@@ -29,7 +29,7 @@ namespace Gameplay.FieldLogic
             _field = field;
         }
 
-        private void CheckComplete()
+        public void CheckComplete()
         {
             var solvedPuzzle = _cubePoses.Where(x => x.HasCube).Select(x => x.Index).ToList();
             if (PuzzleCode.GetPuzzleCode(_field.GetActivePuzzle()) == PuzzleCode.GetPuzzleCode(solvedPuzzle))

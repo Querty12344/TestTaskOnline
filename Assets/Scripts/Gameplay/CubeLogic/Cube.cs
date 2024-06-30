@@ -25,6 +25,7 @@ namespace Gameplay.CubeLogic
             _opaque.SetActive(true);
             _transparent.SetActive(false);
             Holding = false;
+            _boxCollider.isTrigger = false;
         }
 
         public void Pick()

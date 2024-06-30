@@ -7,8 +7,14 @@ namespace Gameplay.FieldLogic
     {
         [SerializeField] private int _index;
         private Cube _cube;
+        private PuzzlePanel _puzzlePanel;
         public int Index => _index;
         public bool HasCube => _cube;
+
+        public void Construct(PuzzlePanel puzzlePanel)
+        {
+            _puzzlePanel = puzzlePanel;
+        }
 
         public void SetCube(Cube cube)
         {
@@ -18,6 +24,7 @@ namespace Gameplay.FieldLogic
         public void RemoveCube()
         {
             _cube = null;
+            _puzzlePanel.CheckComplete();
         }
     }
 }
